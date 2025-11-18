@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	
+	<!--
+	
+	box-sizing:border-box;
+	
+	The CSS box-sizing property defines how to calculate the width and height of an element: 
+	should the calculation include padding and borders, or not.
+
+	By default, the width and height of an element is calculated like this:
+
+	width + padding + border = actual width of an element
+	height + padding + border = actual height of an element
+	This means: When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).
+	
+	-->
+	
+	
+	<style>
+	
+		
+		*{
+			box-sizing:border-box;
+			margin:0px;
+		}
+		
+		.box1{
+			width:25%;
+			height:200px;
+			background-color:yellow;
+			float:left;
+			border:solid 20px red;
+			padding:20px;
+		}
+	
+		.box2{
+			width:25%;
+			height:200px;
+			background-color:green;
+			float:left;	
+			border:solid 20px red;
+			padding:20px;
+		}
+	
+	</style>
+	
+</head>
+<body>
+ 
+	<div class="box1"> 
+		Hi i am Border Box
+	</div>
+	
+	<div class="box2"> 
+		Hi i am Border Box
+	</div>
+	
+</body>
+</html>

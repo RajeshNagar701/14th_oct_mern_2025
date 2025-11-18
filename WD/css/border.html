@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	
+	<!--
+	
+	border-style
+	border-width
+	border-color
+	
+	dotted - Defines a dotted border
+	dashed - Defines a dashed border
+	solid - Defines a solid border
+	double - Defines a double border
+	groove - Defines a 3D grooved border. The effect depends on the border-color value
+	ridge - Defines a 3D ridged border. The effect depends on the border-color value
+	inset - Defines a 3D inset border. The effect depends on the border-color value
+	outset - Defines a 3D outset border. The effect depends on the border-color value
+	none - Defines no border
+	hidden - Defines a hidden border
+	
+	
+	outline
+	outline-style
+	outline-width
+	outline-color
+	
+	border-radius:1% ; 4 side curve
+	border-radius:50% ; 4 side circle
+	border-radius:10px 20px 30px 40px;
+	
+	-->
+	
+	
+	<style>
+		.box1{
+			width:200px;
+			height:200px;
+			background-color:red;
+			
+			border-style:solid;
+			border-width:10px;
+			border-color:yellow;
+		}
+		
+		.box2{
+			width:200px;
+			height:200px;
+			background-color:red;
+			border:solid 10px yellow;
+		}
+		
+		
+		.test1{
+			width:200px;
+			height:200px;
+			background-color:red;
+			border:solid 10px yellow;
+			outline:dotted 10px red;
+		}
+		
+		
+		.roundbox{
+			width:200px;
+			height:200px;
+			background-color:red;
+			border:solid 10px yellow;
+			border-radius:50%;
+		}
+		
+		.radiusbox{
+			width:200px;
+			height:200px;
+			background-color:red;
+			border:solid 10px yellow;
+			border-radius:10px 20px 30px 40px;
+		}
+	</style>
+	
+</head>
+<body>
+ 
+	<div class="box1"> Hi i am Border Box</div>
+    
+	<br><br>
+	
+	<div class="box2"> Hi i am Border Box</div>
+	
+	<br><br>
+	
+	<div class="test1"> Hi i am Border Box</div>
+	
+	<br><br>
+	
+	<div class="roundbox"> Hi i am Border Box</div>
+	
+	<br><br>
+	
+	<div class="radiusbox"> Hi i am Border Box</div>
+</body>
+</html>
