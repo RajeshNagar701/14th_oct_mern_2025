@@ -1,0 +1,100 @@
+
+<!--
+
+The position Property
+The position property specifies the type of positioning method used for an element.
+
+There are five different position values:
+
+static
+relative
+fixed
+absolute
+sticky
+
+Elements are then positioned using the 
+
+top, 
+bottom, 
+left,
+right properties. 
+
+However, these properties will not work unless the position property is set first. They also work differently depending on the position value.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+*{
+	box-sizing:border-box;
+}
+
+
+.myRelative1 {
+  width:100px;
+  height:100px;
+  background-color:blue;
+  border: 3px solid #73AD21;
+}
+.myRelative2 {
+  width:100px;
+  height:100px;
+  background-color:yellow;
+  position: relative;
+  bottom:50px;
+  left:20px;
+  border: 3px solid #73AD21;
+}
+
+.myAbsolute1 {
+  width:100px;
+  height:100px;
+  background-color:blue;
+  border: 3px solid #73AD21;
+  position:absolute;
+  top:30px;
+  left:30px;
+}
+.myAbsolute2 {
+  width:100px;
+  height:100px;
+  background-color:yellow;
+  border: 3px solid #73AD21;
+}
+
+</style>
+</head>
+<body>
+
+
+<div>
+<div class="myRelative1">
+	This div element has position: static;
+</div>
+
+<div class="myRelative2">
+	This div element has position: static;
+</div>
+
+
+<hr>
+
+<div style="position:relative">
+	<div class="myAbsolute1">
+		This div element has position: static;
+	</div>
+	<div class="myAbsolute2">
+		This div element has position: static;
+	</div>
+</div>
+<hr>
+
+
+
+
+</body>
+</html>
+
+
