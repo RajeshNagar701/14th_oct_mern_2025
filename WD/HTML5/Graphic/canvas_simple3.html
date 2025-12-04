@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--
+
+context.fillText("my text", xPosition, yPosition);
+context.strokeText("my text", xPosition, yPosition);
+
+
+var canvas = document.querySelector("#myCanvas");
+var context = canvas.getContext("2d");
+ 
+context.fillText("Canvas!", 40, 125);
+context.strokeText("Canvas!", 40, 275);
+
+context.font = "96px Helvetica, Arial, sans-serif";
+ctx.fillStyle = "red";
+//context.font = "[style] [variant] [weight] [size]/[line height] [font family]";
+context.textAlign = "center";
+context.direction = "rtl";
+context.textBaseline = "top";
+-->
+
+
+<canvas id="myCanvas" width="500" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+ctx.font = "bold 96px Helvetica, Arial, sans-serif";
+ctx.fillStyle = "steelblue";
+ctx.fillText("Canvas!", 50, 100);     // fill text
+
+
+
+ctx.strokeStyle = "#173b79";
+ctx.strokeText("Canvas!", 50, 250);  // border text
+</script>
+
+<br>
+
+<p style="font-size:30px; font-family:Arial, Helvetica, sans-serif; margin-left:20px" >Hello World</p>
+
+</body>
+</html>

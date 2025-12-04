@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<!--
+// above 768 desktop
+// between 600 to 768 tablet
+// below 600 mobile 
+-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h2>The picture Element</h2>
+
+<picture>
+  <source media="(min-width: 900px)" srcset="img_car.jpg"> 
+  <source media="(min-width: 768px)" srcset="img_food.jpg"> 
+  <img src="img_girl.jpg" style="width:auto;">           
+</picture>
+
+
+</body>
+</html>

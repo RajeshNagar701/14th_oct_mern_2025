@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<!--
+The Rendering Context
+The <canvas> is initially blank, and to display something, a script first needs to access the
+rendering context and draw on it.
+The canvas element has a DOM method called getContext, used to obtain the rendering context
+and its drawing functions. This function takes one parameter, the type of context 2d.
+Following is the code to get required context along with a check if your browser supports
+<canvas> element −
+
+
+-->
+
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.
+</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+
+
+var ctx = c.getContext("2d");
+ctx.moveTo(0,0); // first point work on width start point & height
+ctx.lineTo(200,100); //end point work on width & height
+ctx.stroke();
+
+</script>
+
+</body>
+</html>
