@@ -1,0 +1,132 @@
+<!--
+
+Responsive :
+Responsive web design is about creating web pages that look good 
+on all devices!
+
+A responsive web design will automatically adjust for different 
+screen sizes and viewports.
+
+
+What is a Media Query?
+Media query is a CSS technique introduced in CSS3.
+
+It uses the @media rule to include a block of CSS properties only 
+if a certain condition is true(certain Resolution).
+
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+*{
+	box-sizing:border-box;
+}
+
+.row{
+	display:flex;
+	flex-wrap: wrap;
+}
+
+/*  mobile 600 less then */
+
+/*   default work on Mobile less 600 Resolution  */
+[class*="col-"]{
+	width:100%;
+}
+
+/*  tablet 600> */
+@media only screen and (min-width: 600px) {
+	.col-s-1{ width:8.33% }
+	.col-s-2{ width:16.66% }
+	.col-s-3{ width:25% }
+	.col-s-4{ width:33.33% }
+	.col-s-5{ width:41.66% }
+	.col-s-6{ width:50% }
+	.col-s-7{ width:58.33% }
+	.col-s-8{ width:66.66% }
+	.col-s-9{ width:75% }
+	.col-s-10{ width:83.33% }
+	.col-s-11{ width:91.66% }
+	.col-s-12{ width:100% }
+}
+
+/*  desktop 768> */
+@media only screen and (min-width: 768px) {
+	.col-1{ width:8.33% }
+	.col-2{ width:16.66% }
+	.col-3{ width:25% }
+	.col-4{ width:33.33% }
+	.col-5{ width:41.66% }
+	.col-6{ width:50% }
+	.col-7{ width:58.33% }
+	.col-8{ width:66.66% }
+	.col-9{ width:75% }
+	.col-10{ width:83.33% }
+	.col-11{ width:91.66% }
+	.col-12{ width:100% }
+}
+
+</style>
+</head>
+<body>
+	
+	<div class="row">
+		<div style="background-color:red" class="col-12 col-s-12">
+			<h1>Header</h1>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div style="background-color:lightGray" class="col-2 col-s-4">
+			<h1>Sidebar</h1>
+		</div>
+		<div style="background-color:orange" class="col-8 col-s-8">
+			<h1>Mainbar</h1>
+		
+			<div class="row">
+				<div class="col-4 col-s-8" style="background-color:blue;color:white;padding:20px">
+					<h1> box - 1 </h1>
+				</div>
+				<div class="col-4 col-s-4" style="background-color:yellow;color:white;padding:20px">
+					<h1> box - 1 </h1>
+				</div>
+				<div class="col-4 col-s-12" style="background-color:pink;color:white;padding:20px">
+					<h1> box - 1 </h1>
+				</div>
+				
+			</div>
+			<h1>Mainbar</h1>
+			<h1>Mainbar</h1>
+			<h1>Mainbar</h1>
+			<h1>Mainbar</h1>
+		</div>
+		<div style="background-color:lightGray" class="col-2 col-s-12">
+			<h1>Sidebar</h1>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div style="background-color:black;color:white" class="col-3 col-s-6">
+			<h1>Footer 1</h1>
+		</div>
+		<div style="background-color:black;color:white" class="col-3 col-s-6">
+			<h1>Footer 1</h1>
+		</div>
+		<div style="background-color:black;color:white" class="col-3 col-s-6">
+			<h1>Footer 1</h1>
+		</div>
+		<div style="background-color:black;color:white" class="col-3 col-s-6">
+			<h1>Footer 1</h1>
+		</div>
+
+
+	</div>
+	
+</body>
+</html>
