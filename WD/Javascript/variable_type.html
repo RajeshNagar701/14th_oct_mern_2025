@@ -1,0 +1,161 @@
+<!--
+
+JavaScript variable
+
+var varname=var_value
+
+var a=10;
+var b=10.5 
+var c='r'
+var d="Rajesh" 
+
+
+data type ( int=10  float=10.5  char='R'  string="string means words" )
+
+One of the most fundamental characteristics of a programming language 
+is the set of data types it supports. 
+These are the type of values that can be represented and manipulated 
+in a programming language.
+
+JavaScript allows you to work with three primitive data types −
+
+Numbers, eg. 123, 120.50 etc.
+Strings of text e.g. "This text string" etc.
+Boolean e.g. true or false.
+float e.g. 10.56565 
+
+
+Naming variables
+
+Variable names are pretty flexible as long as you follow a few rules:
+
+Start them with a letter(a-z), underscore _, or dollar sign $.
+
+After the first letter, you can use numbers, as well as letters, underscores, or dollar signs.
+Don’t use any of JavaScript’s reserved keywords (javscript inbuild function or any keyword)
+
+Variable names are case-sensitive,  a   A
+No space in variable name
+
+============================================
+
+VAR : KEYWORDS Use the var keyword only for declaration or initialization, 
+ once for the life of any variable name in a document. 
+
+
+=====================================================
+var camelCase = "lowercase word, then uppercase";
+var dinner2Go = "pizza";
+var I_AM_HUNGRY = true;
+var _Hello_ = "what a nice greeting"
+var $_$ = "money eyes";
+
+
+var 12abc=   wrong (start with number)
+var abc abc = no space 
+
+=======================================
+
+
+var a,b,c;
+a=10;
+b=20;
+c=20;
+ 
+=========================================
+
+<script type = "text/javascript">
+	  var numb =10;
+      var name = "Ali";
+      var money;
+      money = 2000.50;
+</script>
+
+
+You can also declare multiple variables
+
+ var money, name;
+
+
+      var money;
+      money = 2000.50;
+
+1)Primitive data type
+2)Non-primitive (reference) data type	  
+	  
+JavaScript primitive data types
+There are five types of primitive data types in JavaScript. They are as follows:
+
+Data Type	Description
+
+String		represents sequence of characters e.g. "hello"
+Number		represents numeric values e.g. 100
+Boolean		represents boolean value either false or true
+Undefined	represents undefined value
+Null		represents null i.e. no value at all	
+
+
+JavaScript non-primitive data types
+
+Data Type	Description
+
+Object	represents instance through which we can access members
+Array	represents group of similar values
+RegExp	represents regular expression
+-->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+	
+	// primitive
+	var num=1250;  // int
+	document.write("<h1>"+ num +"</h1>");
+	
+	var point=12.50; // float
+	document.write("<h1>"+ point +"</h1>");
+	
+	var name="kRITI Mishra"; // float
+	document.write("<h1>"+ name +"</h1>");
+	
+	var blank=null;
+	document.write("<h1>"+ blank +"</h1>");
+	
+	
+	// non primitive
+	
+	//Array
+				//index 0,1,2,3,4
+	var students=["darshan","Antima","Kriti","Rakesh","Krupali"];
+	document.write("<h1>"+ students +"</h1>");
+	
+	document.write("<h1>"+ students[4] +"</h1>");
+	
+	
+	// object { propery : value}
+	
+	// single Object
+	var single_obj={ name:"Darshan",email:"darashan@gmail.com",pass:"1234",mobile:"12345678" };
+	document.write("<h1>"+ single_obj.mobile +"</h1>");
+	
+	
+	//arr Object
+	
+	var arr_obj=[
+		{ name:"Darshan",email:"darashan@gmail.com",pass:"1234",mobile:"12345678" },
+		{ name:"akash",email:"akash@gmail.com",pass:"1234",mobile:"22345678" },
+		{ name:"pinal",email:"pinal@gmail.com",pass:"1234",mobile:"33345678" }
+	];
+	
+	document.write("<h1>"+ arr_obj[2].name +"</h1>");
+	document.write("<h1>"+ arr_obj[0].email +"</h1>");
+	
+</script>
+
+</body>
+</html>
+
