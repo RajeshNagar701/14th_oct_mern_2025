@@ -2,13 +2,17 @@
 
 JavaScript variable
 
+1)Primitive data type
+2)Non-primitive (reference) data type	
+
+
 var varname=var_value
 
-var a=10;
-var b=10.5 
-var c='r'
-var d="Rajesh" 
-
+var a=10;     	   int /number
+var b=10.5    	   float/double
+var c='r'     	   char
+var d="Rajesh"     string
+var marrige=true   Boolean
 
 data type ( int=10  float=10.5  char='R'  string="string means words" )
 
@@ -29,7 +33,14 @@ Naming variables
 
 Variable names are pretty flexible as long as you follow a few rules:
 
-Start them with a letter(a-z), underscore _, or dollar sign $.
+Start them with a letter(a-z), underscore _, or dollar sign $.  
+
+abc  
+_abc
+$abc 
+
+
+
 
 After the first letter, you can use numbers, as well as letters, underscores, or dollar signs.
 Don’t use any of JavaScript’s reserved keywords (javscript inbuild function or any keyword)
@@ -74,14 +85,10 @@ c=20;
 
 You can also declare multiple variables
 
- var money, name;
-
 
       var money;
       money = 2000.50;
-
-1)Primitive data type
-2)Non-primitive (reference) data type	  
+  
 	  
 JavaScript primitive data types
 There are five types of primitive data types in JavaScript. They are as follows:
@@ -94,6 +101,7 @@ Boolean		represents boolean value either false or true
 Undefined	represents undefined value
 Null		represents null i.e. no value at all	
 
+=======================================================================
 
 JavaScript non-primitive data types
 
@@ -142,18 +150,19 @@ RegExp	represents regular expression
 	var single_obj={ name:"Darshan",email:"darashan@gmail.com",pass:"1234",mobile:"12345678" };
 	document.write("<h1>"+ single_obj.mobile +"</h1>");
 	
-	
 	//arr Object
 	
+	/*
 	var arr_obj=[
 		{ name:"Darshan",email:"darashan@gmail.com",pass:"1234",mobile:"12345678" },
 		{ name:"akash",email:"akash@gmail.com",pass:"1234",mobile:"22345678" },
 		{ name:"pinal",email:"pinal@gmail.com",pass:"1234",mobile:"33345678" }
 	];
+	*/
 	
-	document.write("<h1>"+ arr_obj[2].name +"</h1>");
-	document.write("<h1>"+ arr_obj[0].email +"</h1>");
-	
+	//document.write("<h1>"+ arr_obj[2].name +"</h1>");
+	//document.write(`<h1> ${arr_obj[0].name} : ${arr_obj[0].email} </h1>`);
+	 
 </script>
 
 </body>
