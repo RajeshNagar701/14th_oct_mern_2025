@@ -2,13 +2,13 @@
 
 JavaScript variable
 
-1)Primitive data type
-2)Non-primitive (reference) data type	
+1)Primitive data type  (Numbers,String,float,Boolean)
+2)Non-primitive 	   (reference) data type	
 
 
 var varname=var_value
 
-var a=10;     	   int /number
+var a=10;     	   integer /number
 var b=10.5    	   float/double
 var c='r'     	   char
 var d="Rajesh"     string
@@ -33,13 +33,11 @@ Naming variables
 
 Variable names are pretty flexible as long as you follow a few rules:
 
-Start them with a letter(a-z), underscore _, or dollar sign $.  
+Start them with a letter(a-z) or underscore _ or or dollar sign $.  
 
 abc  
 _abc
 $abc 
-
-
 
 
 After the first letter, you can use numbers, as well as letters, underscores, or dollar signs.
@@ -65,7 +63,7 @@ var $_$ = "money eyes";
 var 12abc=   wrong (start with number)
 var abc abc = no space 
 
-=======================================
+========================================================
 
 
 var a,b,c;
@@ -136,19 +134,20 @@ RegExp	represents regular expression
 	
 	// non primitive
 	
-	//Array
+	//Array : collections of value 
 				//index 0,1,2,3,4
 	var students=["darshan","Antima","Kriti","Rakesh","Krupali"];
+	
 	document.write("<h1>"+ students +"</h1>");
 	
 	document.write("<h1>"+ students[4] +"</h1>");
 	
 	
-	// object { propery : value}
+	// object { propery : value,}
 	
 	// single Object
-	var single_obj={ name:"Darshan",email:"darashan@gmail.com",pass:"1234",mobile:"12345678" };
-	document.write("<h1>"+ single_obj.mobile +"</h1>");
+	var student1={ name:"Darshan",email:"darashan@gmail.com",pass:"1234",mobile:"12345678" };
+	document.write("<h1>"+ student1.name + student1.email +"</h1>");
 	
 	//arr Object
 	
@@ -161,7 +160,7 @@ RegExp	represents regular expression
 	*/
 	
 	//document.write("<h1>"+ arr_obj[2].name +"</h1>");
-	//document.write(`<h1> ${arr_obj[0].name} : ${arr_obj[0].email} </h1>`);
+	//document.write(`<h1> ${arr_obj[0].email} : ${arr_obj[0].email} </h1>`);
 	 
 </script>
 
