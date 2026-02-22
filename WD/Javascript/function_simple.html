@@ -2,6 +2,7 @@
 
 <!--
 
+
 Block of code , JavaScript functions are used to perform operations. 
 We can call JavaScript function many times to reuse the code.
 
@@ -39,28 +40,31 @@ We don’t need to write many lines of code each time to perform a common task.
 		// simple function
 		
 		
-		/*
 		
+		/*
 		function sum(){
 		 var a=10;
 		 var b=20;
 		 var sum=a+b;
-		 document.write ("sum of a & b are : " + sum);
+		 document.write ("sum of a & b are : " + sum + "<br>");
 		}
 		sum();
 		sum();
-		
+		sum();
 		*/
+		
 		
 		// simple function with parameter / argument
 		/*
-		function sum(a,b){
-			 var sum=a+b;
-			 document.write ("sum of a & b are : " + sum + "<br>");
+		function result(name,a,b){
+		 var total=a+b;
+		 document.write (`<h1>${name} : result total ${total} </h1>`);
 		}
-		sum(5,7);
-		sum(8,7);
-		sum(10,7);
+		result("Jyoti",10,20);
+		result("Abbass",15,25);
+		result("Neeraj",1,20);
+		result("Harsh",70,20);
+		result("Raj",20,30);
 		*/
 		
 		
@@ -81,20 +85,21 @@ We don’t need to write many lines of code each time to perform a common task.
 		
 		
 		// function with return value
-		
-		/*
+	
+	/*
 		function sum(){
 			 var a=10;
 			 var b=20;
 			 var sum=a+b;
 			 return("sum of a & b are : " + sum);
 		}
-		document.write(sum());
-		*/
+		var ans=sum();
+	*/	
       </script>
   
 	
 	<script>
+	
 		// build in function which predefined function
 		
 		var name="Rajesh nagar";
