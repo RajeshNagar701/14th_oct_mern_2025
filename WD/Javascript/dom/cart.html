@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  </head>
+<body>
+
+
+
+
+  
+  <div align="center">
+	
+	<button onclick="plus()">+</button>
+		<h1 id="num">0</h1>
+	<button onclick="minus()">-</button>
+	
+  </div>
+	<hr>
+  
+  <script>
+	function plus(){
+		var num=document.getElementById('num').innerHTML;
+		num++;
+		document.getElementById('num').innerHTML=num;
+	}
+	
+	function minus(){
+		var num=document.getElementById('num').innerHTML;
+		if(num>0)
+		{
+			num--;
+			document.getElementById('num').innerHTML=num;
+		}
+	}
+  </script>
+	
+  <hr>
+  
+  <div align="center">
+	
+	<button onclick="plus1()">+</button>
+		<input type="text" value="0" id="num1" />
+	<button onclick="minus1()">-</button>
+	
+  </div>
+	<hr>
+  
+  <script>
+	function plus1(){
+		var num1=document.getElementById('num1').value;
+		num1++;
+		document.getElementById('num1').value=num1;
+	}
+	
+	function minus1(){
+		var num1=document.getElementById('num1').value;
+		if(num1>0)
+		{
+			num1--;
+			document.getElementById('num1').value=num1;
+		}
+	}
+  </script>
+	
+	
+</body>
+</html>

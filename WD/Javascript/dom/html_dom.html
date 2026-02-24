@@ -1,0 +1,87 @@
+
+
+
+<!--
+
+
+document.write("Hello");
+window.alert("Hello");
+
+
+
+
+print
+
+innerHTML  document.getElementById('text').innerHTML="<H1>text hello<H1>"  
+innerText  document.getElementById('text').innerText="<H1>text hello<H1>"
+value	   document.getElementById('text').value="text hello"
+
+
+get 
+
+var htmlcode=document.getElementById('test1').innerHTML"  
+var textcode=document.getElementById('test1').innerText"
+var valuecode=document.getElementById('test1').value"
+
+
+
+
+-->
+
+
+<p id="test1">Hi i am paragraph 1</p>
+
+<p id="test2">Hi i am paragraph 2</p>
+
+<input type="text" id="test3" value="Raj nagar" />
+
+<hr>
+
+
+<p id="demo1">Hi i am paragraph 1</p>
+<span id="msg1" style="color:red"></span>
+
+
+<p id="demo2">Hi i am paragraph 2</p>
+<span id="msg2" style="color:blue"></span>
+
+
+<br><br><br>
+
+
+<input type="text" id="demo3" value="Raj nagar" />
+<input type="text" id="msg3" />
+
+
+
+<script>
+	
+	//document.write("Hello");
+	//window.alert("Hello");
+	//console.log("Hello");
+	//console.log(5+5);
+	
+	
+	document.getElementById('test1').innerHTML="<h1>Hi i am HTML</h1>";
+	
+	document.getElementById('test2').innerText="<h1>Hi i am text</h1>";
+	
+	document.getElementById('test3').value="Nagar Rajesh";
+	
+	
+	
+	
+	// get & print
+	var html=document.getElementById('demo1').innerHTML;
+	document.getElementById('msg1').innerHTML=html;
+	
+	
+	// get & print
+	var text=document.getElementById('demo2').innerText;
+	document.getElementById('msg2').innerText=text;
+	
+	// get & print
+	var value=document.getElementById('demo3').value;
+	document.getElementById('msg3').value=value;
+</script>
+
