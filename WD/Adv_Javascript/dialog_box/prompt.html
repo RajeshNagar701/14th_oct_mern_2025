@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script>
+
+	// only pop up box wih ok and cancel and with textbox 
+	
+	function prompt_fun()
+	{
+		var ans=prompt("enter your pass/code/otp");
+	    if(ans==1234)
+		{
+			// delete / editUpdate / any task authantication
+			alert('delete/payment	 success');
+			window.location='alert.html';  // redirect
+		}
+		else
+		{
+			alert('Task failed');
+			
+		}
+	}
+</script>
+
+</head>
+
+<body>
+
+
+<input type="submit" value="Propmt box"  onclick="prompt_fun()">
+
+
+
+</body>
+</html>

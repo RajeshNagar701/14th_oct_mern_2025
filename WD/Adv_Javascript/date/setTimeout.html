@@ -1,0 +1,38 @@
+
+<!--
+
+setTimeout()
+setInterval()
+-->
+
+
+<h2 id="demo"></h2>
+
+<script>
+setTimeout(myGreeting, 5000);
+
+function myGreeting() 
+{
+  document.getElementById("demo").innerHTML="Happy Birthday!";
+}
+
+</script>
+
+<h2 style="background-color:red;color:white" id="time"></h2>
+
+<script>
+
+setInterval(displayHello, 1000);
+
+function displayHello() 
+{
+  const today = new Date();
+  let watch = (today.getHours()) + ":" + today.getMinutes() + ":" + today.getSeconds();
+  document.getElementById("time").innerHTML = watch;
+}
+
+
+</script>
+
+
+
