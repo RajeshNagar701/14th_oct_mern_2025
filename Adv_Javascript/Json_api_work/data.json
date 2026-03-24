@@ -1,0 +1,22 @@
+{
+    "companyName": "Krishna Info Tech",
+    "address": "Surat Varacha",
+    "TotalEmployee": 20,
+    "products": [
+        {
+            "id": 1,
+            "productName": "Apple",
+            "Qty": 100
+        },
+        {
+            "id": 2,
+            "productName": "Pineapple",
+            "Qty": 120
+        },
+        {
+            "id": 3,
+            "productName": "Mango",
+            "Qty": 10
+        }
+    ]
+}
