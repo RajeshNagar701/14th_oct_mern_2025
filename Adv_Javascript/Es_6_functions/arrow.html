@@ -1,0 +1,36 @@
+<!--
+Arrow functions were introduced in ES6.
+
+Arrow functions allow us to write shorter function syntax:   ()=>{  }
+-->
+
+<script>
+
+	// simple
+	function sum1(a,b)
+	{
+		document.write(a+b);
+	}
+	sum1(8,7);
+	
+	//litral
+	const sum2=function(x,y) 
+	{ 
+		document.write(x*y);  
+	};
+	sum2(5,7);
+	
+	// arrow   onclick="()=>{  }"
+	var sum3=(a,b)=>{    
+	
+		document.write(a+b);
+	}
+	sum3(8,7);
+	
+	//const sum4=()=>document.write('hello');
+	
+	
+</script>
+
+
+<!-- React <button onclick={()=>alert('hello')}></button>  -->

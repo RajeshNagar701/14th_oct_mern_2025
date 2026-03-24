@@ -1,0 +1,134 @@
+<!--
+ECMAScript 2015 was the second major revision to JavaScript.
+
+ECMAScript 2015 is also known as ES6 and ECMAScript 6.
+
+This chapter describes the most important features of ES6.
+
+New Features in ES6
+
+Variable   var 
+
+The let keyword
+The const keyword
+
+
+
+Function      
+
+lierals Functions
+Arrow Functions
+construct
+Function 
+
+The {a,b} = Operator
+The [a,b] = Operator
+The ... Operator
+
+
+loop
+
+For of / For In
+Map Objects
+Set Objects
+filter
+foreach
+every
+
+Classes / OOPS
+
+Promises
+Symbol
+Default Parameters
+Function Rest Parameter
+String.includes()
+String.startsWith()
+String.endsWith()
+Array entries()
+Array.from()
+Array keys()
+Array find()
+Array findIndex()
+Math.trunc
+Math.sign
+Math.cbrt
+Math.log2
+Math.log10
+Number.EPSILON
+Number.MIN_SAFE_INTEGER
+Number.MAX_SAFE_INTEGER
+Number.isInteger()
+Number.isSafeInteger()
+New Global Methods
+JavaScript Modules
+
+
+array => adv array Functions
+string => adv string Functions
+
+-->
+
+
+<script>
+
+
+
+
+
+/*
+
+Var
+
+Variables declared with the var always have Global Scope.
+Variables declared with the var keyword can NOT have block scope:
+
+var a;
+a=50;
+{
+	var a;
+	a=50;
+	
+	var a=60;
+}
+
+*/
+
+/*
+Let
+
+The let keyword was introduced in ES6 (2015)
+
+Variables declared with let have Block Scope  {  }
+
+Variables declared with let must be Declared before use
+
+Variables declared with let cannot be Redeclared in the same scope
+*/
+/*
+{
+  let x = 2;   // local 
+
+  x=4; // re-asigned ok but re declare not possible
+}
+
+// x can NOT be used here
+*/
+
+
+/*
+Const 
+
+Variables defined with const cannot be Redeclared
+
+Variables defined with const cannot be Reassigned
+
+Variables defined with const have Block Scope
+
+*/
+
+const PI = 3.14159265359; // correct
+
+const PI;
+PI = 3.14159265359; // Incorrect
+
+</script>

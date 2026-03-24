@@ -22,13 +22,13 @@ function myGreeting()
 
 <script>
 
-setInterval(displayHello, 1000);
+setInterval(displayHello, 1000); //this function call function in 1 sec interval
 
 function displayHello() 
 {
-  const today = new Date();
-  let watch = (today.getHours()) + ":" + today.getMinutes() + ":" + today.getSeconds();
-  document.getElementById("time").innerHTML = watch;
+  var d = new Date();
+  let text4 = d.toLocaleTimeString();
+  document.getElementById("time").innerHTML = text4;
 }
 
 
