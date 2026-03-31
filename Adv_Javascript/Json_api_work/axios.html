@@ -7,12 +7,30 @@ It provides methods that include .get(), .post(), and .delete().
 In this article, you will build a JavaScript application that uses Axios to perform GET, 
 POST, and DELETE requests to a server for updates to a list of todo items.
 
+
+ 
+	  // get
+	  
+	  //axios.get(`https://jsonplaceholder.typicode.com/posts`)   all products =>IN ARRAY 
+	  //https://jsonplaceholder.typicode.com/posts/2  id=2  get data => SINGLE OBJECT
+	  //https://jsonplaceholder.typicode.com/posts?category=jewelery  // ARRAY get data by category
+
+	  //method : post   insert
+	  //axios.post(`https://jsonplaceholder.typicode.com/posts`,object) // var object={userId:123,id:2,title:"hello",body:"hello world"}
+	  
+	  //method : delete   delete
+	  //axios.delete(`https://jsonplaceholder.typicode.com/posts/5`) // delete 5 number id
+	  
+	  //method : put   update
+	  //axios.put(`https://jsonplaceholder.typicode.com/posts/5`,object) // var object={userId:123,id:2,title:"hello",body:"hello world"}
+	  
 -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+   
+   <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -24,6 +42,7 @@ POST, and DELETE requests to a server for updates to a list of todo items.
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	
   </head>
+  
   <body>
     
  
@@ -43,27 +62,25 @@ POST, and DELETE requests to a server for updates to a list of todo items.
 		 console.log(object.status);
 	  })
 	 */
-	  
-	  
-	  
-	 
-	 /*
 	 
 	 // data get all data
+	 /*
 	  const fetch=async()=>{
 		const res=await axios.get(`https://jsonplaceholder.typicode.com/posts`);
 		console.log(res.data);
 	  }
 	  fetch();	
-	 
 	 */
+	 
 	 
 	  
 	 /*
 	 
 	 // data get single id data    => single object
 	  const single_fetch=async()=>{
+	  
 		const res=await axios.get(`https://jsonplaceholder.typicode.com/posts/5`);
+		
 		console.log(res.data);
 	  }
 	  single_fetch();
@@ -73,20 +90,26 @@ POST, and DELETE requests to a server for updates to a list of todo items.
 	/*
 	  // data get particular property data
 	  const particular_fetch=async()=>{
+	  
 		const res=await axios.get(`https://jsonplaceholder.typicode.com/posts?userId=5`);
+		
 		console.log(res.data);
 	  }
 	  particular_fetch();
 	
 	*/
 	
+	 //=======================================================================================
+	 
 	 
 	  /*
 	  
 	  // data insert
 	  var object={id: 103,name:"ram Kumar",email:"ram@gmail.com",password: "1234"}
 	  const insert=async()=>{
+	  
 		const res=await axios.post(`https://jsonplaceholder.typicode.com/posts/`,object);
+		
 		console.log(res.data);
 	  }
 	  
@@ -107,7 +130,7 @@ POST, and DELETE requests to a server for updates to a list of todo items.
 	   
 	  var updobject={id: 101,name:"shyamjiKumar",email:"shyamji@gmail.com",password: "abc"}
 	  const onupdate=async()=>{
-		const res=await axios.put(`https://jsonplaceholder.typicode.com/posts/5`,updobject);
+		const res=await axios.put(`https://jsonplaceholder.typicode.com/posts/5`, updobject);
 		console.log(res.data);
 	  }
 

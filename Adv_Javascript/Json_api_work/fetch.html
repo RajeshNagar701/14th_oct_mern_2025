@@ -22,6 +22,23 @@ The fetch() function returns a Promise which is fulfilled with a Response object
       .then(response => response.json())
       .then(object => console.log(object))
 	  
+	  // get
+	  //https://jsonplaceholder.typicode.com/posts   all products =>IN ARRAY 
+	  //https://jsonplaceholder.typicode.com/posts/2  id=2  get data => SINGLE OBJECT
+	  //https://jsonplaceholder.typicode.com/posts?category=jewelery  // ARRAY get data by category
+
+	  //method : post   insert
+	  //fetch(`https://jsonplaceholder.typicode.com/posts`,object) // var object={userId:123,id:2,title:"hello",body:"hello world"}
+	  
+	  //method : delete   delete
+	  //fetch(`https://jsonplaceholder.typicode.com/posts/5`) // delete 5 number id
+	  
+	  //method : put   update
+	  //fetch(`https://jsonplaceholder.typicode.com/posts/5`,object) // var object={userId:123,id:2,title:"hello",body:"hello world"}
+	  
+	  
+//===========================================================================================	  
+	  
 	  
 	  // post data (Insert)   PASS : OBJECT
 	  /*
