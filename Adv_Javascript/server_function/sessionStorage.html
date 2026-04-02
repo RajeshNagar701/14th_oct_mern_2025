@@ -1,0 +1,73 @@
+<!--
+
+Set and retrieve a sessionStorage name/value pair:
+The sessionStorage object let you store key/value pairs in the browser.
+
+The sessionStorage object stores data for only one session.
+
+(The data is deleted when the browser is closed).
+
+Note :  The localStorage Object which stores data with no expiration date.
+(The data is not deleted when the browser is closed, and are available in future sessions).
+
+
+create
+sessionStorage.setItem("lastname", "Smith");
+
+get
+sessionStorage.getItem("lastname");
+
+sessionStorage.removeItem("lastname"); sigle delete
+sessionStorage.clear();                multiple delete
+-->
+
+
+<script>
+	sessionStorage.setItem("movie", "KGF-3");
+	
+	/*
+	let movie = sessionStorage.getItem("movie");
+	document.write(movie);
+	*/
+	
+	
+	//sessionStorage.removeItem("movie");
+</script>
+
+<!--
+
+localStorage and sessionStorage are both part of the Web Storage API, 
+providing a way for browsers to store key-value pairs locally. The primary 
+difference between them is the duration and scope of the stored data. 
+
+Persistence (Lifetime):
+
+localStorage data persists indefinitely. It remains available even after the browser 
+is closed and reopened. Data must be explicitly deleted via JavaScript or 
+by clearing the browser cache.
+
+sessionStorage data is temporary. It is cleared automatically when the 
+page session ends, typically when the specific browser tab or window is closed.
+It does, however, survive page reloads and restores.
+
+
+
+
+Scope (Accessibility):
+
+localStorage is scoped to the origin (domain and protocol). 
+Data is shared across all tabs and windows that have the same origin.
+
+sessionStorage is scoped to the origin and the specific tab 
+(top-level browsing context). 
+Data is unique to each tab; opening the same page in a new tab creates a separate 
+sessionStorage instance.
+
+
+Storage Capacity:
+
+Both typically offer much more space than cookies (which are limited to 4KB).
+localStorage usually allows for 5MB to 10MB per origin.
+sessionStorage often has a similar or slightly smaller limit, frequently cited 
+around 5MB. 
+-->
