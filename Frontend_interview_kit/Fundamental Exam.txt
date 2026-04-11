@@ -1,0 +1,16 @@
+
+1) Find Area And Circumference of Circle in javascript.
+2) Convert a Person's Name in Abbreviated Form in javascript.
+3) Calculate a Simple Interest in javascript.
+4) Find Percentage of 5 Subjects in javascript.
+5) Check Number Is Positive or Negative in javascript.
+6) Find the Character Is Vowel or Not in javascript.
+7) Largest of Three Numbers in C Using Nested if Else in javascript.
+8) Armstrong Number in in javascript Using For Loop & While Loop .
+9) Sort an Array in Ascending And Descending Order in javascript.
+10) Insert an Element at a Specific Position in an Array in javascript.
+11) Program to Convert Lowercase to Uppercase And Vice Versa in javascript.
+12) Convert Binary Numbers to Decimal or Decimal Numbers to Binary in javascript.
+13) Left Half Diamond Star Pattern in javascript.
+14) Pyramid Pattern Using Star * in javascript.
+15) Program to Check Prime or Armstrong Number in javascript.
