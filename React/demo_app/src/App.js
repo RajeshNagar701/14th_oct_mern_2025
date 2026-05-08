@@ -11,6 +11,7 @@ import Props_main from './Props/Props_main'
 import App_Route from './Routing/App_Route'
 import State_func from './State/Func_state/State_func'
 import State_class from './State/Class_state/State_class'
+import Class_life from './Lifecycle/class/Class_life'
 
 function App() {
   return (
@@ -29,9 +30,10 @@ function App() {
 			//<App_Route/>
 
 			//<State_class/>
+			//<State_func/>
 		}
-		<State_func/>
 		
+		<Class_life/>
 	</div>
   )
 }
