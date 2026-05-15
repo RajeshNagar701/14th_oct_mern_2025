@@ -13,6 +13,7 @@ import State_func from './State/Func_state/State_func'
 import State_class from './State/Class_state/State_class'
 import Class_life from './Lifecycle/class/Class_life'
 import MUI from './MUI/MUI'
+import Basic_crud from './Basic_crud/Basic_crud'
 
 function App() {
   return (
@@ -34,9 +35,10 @@ function App() {
 			//<State_func/>
 
 			///<Class_life/>
+			//<MUI/>
 		}
 		
-		<MUI/>
+		<Basic_crud/>
 		
 	</div>
   )
