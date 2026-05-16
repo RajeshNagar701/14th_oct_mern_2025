@@ -1,29 +1,36 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-
 
 function Basic_crud() {
 
-    const [formvalue, setFormvalue] = useState({
+    const [formValue,setFormvalue]=useState({
+        id:"",
         name:"",
         email:"",
         password:"",
         mobile:""
     });
 
-    const changeHandel = (e) => {
-        // set all form value in formvalue object
-        setFormvalue({ ...formvalue,id:new Date().getTime().toString() ,[e.target.name]: e.target.value });
-        console.log(formvalue);
+    const changeHandel=(e)=>{
+        setFormvalue({...formValue,id:new Date().getTime().toString(),[e.target.name]:e.target.value});
+        console.log(formValue);
     }
 
     const [data, setData] = useState([]);
-    const onsubmitHandel = (e) => {
-        e.preventDefault(); // page not refress/load on submit
-        setData([...data, formvalue]); // push formvalue object in data array 
-        setFormvalue({ ...formvalue,name:"",email:"",password:"",mobile:""});  // form black after submit
+    const submitHandel=(e)=>{
+        e.preventDefault(); // prevent reload page due to form submit
+        setData([...data,formValue]);
+        setFormvalue({...formValue,name:"",email:"",password:"",mobile:""});
+        alert('Data Inserted Success');
+        return false;
     }
 
+    const deleteHandel=(id)=>{
+
+        const filterdata=data.filter((value,index,arr)=>{
+            return value.id!=id;
+        })
+        setData(filterdata);
+    }
 
     return (
         <div>
@@ -36,30 +43,30 @@ function Basic_crud() {
 
                     <div className="col-sm-12">
                         <h2>Add User</h2>
-                        <form action="" onSubmit={onsubmitHandel}>
+                        <form action="" method="post" onSubmit={submitHandel}>
                             <div className="mb-3 mt-3">
                                 <label htmlFor="name" className="form-label">Name:</label>
-                                <input type="text" onChange={changeHandel} value={formvalue.name} className="form-control" id="email" placeholder="Enter Name" name="name" />
+                                <input type="text" value={formValue.name} onChange={changeHandel} className="form-control" placeholder="Enter Name" name="name" />
                             </div>
                             <div className="mb-3 mt-3">
                                 <label htmlFor="email" className="form-label">Email:</label>
-                                <input type="email" onChange={changeHandel} value={formvalue.email} className="form-control" id="email" placeholder="Enter email" name="email" />
+                                <input type="email" value={formValue.email} onChange={changeHandel} className="form-control" placeholder="Enter email" name="email" />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="pwd" className="form-label">Password:</label>
-                                <input type="password" onChange={changeHandel} value={formvalue.password} className="form-control" id="pwd" placeholder="Enter password" name="password" />
+                                <input type="password" value={formValue.password} onChange={changeHandel} className="form-control" placeholder="Enter password" name="password"  />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="pwd" className="form-label">Mobile:</label>
-                                <input type="number" onChange={changeHandel} value={formvalue.mobile} className="form-control" id="pwd" placeholder="Enter Mobile" name="mobile" />
+                                <label htmlFor="pwd"  className="form-label">Mobile:</label>
+                                <input type="number" value={formValue.mobile} onChange={changeHandel} className="form-control" placeholder="Enter Mobile" name="mobile" />
                             </div>
-                            
+
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
-                    <br/>
+                    <br />
                     <hr />
-                    <br/>
+                    <br />
                     <div className="col-sm-12">
                         <h2>Manage User</h2>
                         <table class="table">
@@ -70,25 +77,27 @@ function Basic_crud() {
                                     <th>Email</th>
                                     <th>Password</th>
                                     <th>Mobile</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               {
-                                // our data array in map loop for display one by one data
+                            {
                                 data&&data.map((value,index,arr)=>{
-
                                     return(
-                                          <tr>
+                                         <tr>
                                             <td>{value.id}</td>
                                             <td>{value.name}</td>
                                             <td>{value.email}</td>
                                             <td>{value.password}</td>
                                             <td>{value.mobile}</td>
-                                         </tr>  
+                                            <td>
+                                                <button className='btn btn-danger' onClick={()=>{deleteHandel(value.id)}}>Delete</button>
+                                            </td>
+                                        </tr>
                                     )
                                 })
-                               }
-                                
+                            }
+
                             </tbody>
                         </table>
                     </div>
