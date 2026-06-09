@@ -16,6 +16,13 @@ function Manage_contacts() {
         setData(res.data);
     }
 
+    const deleteHandel = async (id) => {
+        const res = await axios.delete(`http://localhost:3000/contacts/${id}`);
+        alert('Contacts Deleted Success');
+        fetch();
+        return false;
+    }
+
     return (
         <div className="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
             <div className="container">
@@ -46,7 +53,7 @@ function Manage_contacts() {
                                                 <td>{value.comment}</td>
                                                 <td>
                                                     <button className='btn btn-primary me-1'>Edit</button>
-                                                    <button className='btn btn-danger'>Delete</button>
+                                                    <button className='btn btn-danger' onClick={()=> deleteHandel(value.id) }>Delete</button>
                                                 </td>
                                             </tr>
                                         )

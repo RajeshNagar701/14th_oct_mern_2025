@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 function Manage_categories() {
@@ -6,13 +7,22 @@ function Manage_categories() {
 
     // auto call when component load/birth
     useEffect(() => {
-        fetch('http://localhost:3000/categories')
-            .then((response) => response.json())
-            .then((object) => {
-                console.log(object);
-                setData(object);
-            });
-    }, []);
+        fetch();
+    });
+
+     const fetch = async () => {
+        const res = await axios.get(`http://localhost:3000/categories`);
+        console.log(res.data);
+        setData(res.data);
+    }
+
+    const deleteHandel = async (id) => {
+        const res = await axios.delete(`http://localhost:3000/categories/${id}`);
+        alert('Categories Deleted Success');
+        fetch();
+        return false;
+    }
+    
 
     return (
         <div className="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
@@ -42,7 +52,7 @@ function Manage_categories() {
                                                 <td><img src={value.image} width="50px" alt="" /></td>
                                                 <td>
                                                     <button className='btn btn-primary me-1'>Edit</button>
-                                                    <button className='btn btn-danger'>Delete</button>
+                                                    <button className='btn btn-danger' onClick={()=> deleteHandel(value.id) }>Delete</button>
                                                 </td>
                                             </tr>
                                         )
