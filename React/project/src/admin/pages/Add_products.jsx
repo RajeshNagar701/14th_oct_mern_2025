@@ -71,7 +71,7 @@ function Add_products() {
                         </div>
                         <div className="row row-sm mb-2">
                             <div className="col-lg">
-                                <textarea name="description" onChange={changeHandel} value={formValue.description} className="form-control" placeholder="Enter Product price"></textarea>
+                                <textarea name="description" onChange={changeHandel} value={formValue.description} className="form-control" placeholder="Enter Product description"></textarea>
                             </div>
                         </div>
                         <div className="row row-sm mb-2">

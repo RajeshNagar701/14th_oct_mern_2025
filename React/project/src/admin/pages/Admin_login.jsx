@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Login() {
+function Admin_login() {
     return (
         <div className='mt-5'>
             <div className="az-signin-wrapper">
@@ -33,4 +33,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Admin_login
