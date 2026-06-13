@@ -19,10 +19,14 @@ import Admin_login from "./admin/pages/Admin_login";
 import Login from "./website/pages/Login";
 import Signup from "./website/pages/Signup";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <div>
+      <ToastContainer></ToastContainer>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 
 function Manage_products() {
     const [data, setData] = useState([]);
@@ -17,7 +18,7 @@ function Manage_products() {
 
      const deleteHandel = async (id) => {
         const res = await axios.delete(`http://localhost:3000/products/${id}`);
-        alert('Product Deleted Success');
+        toast.success('Product Deleted Success');
         fetch();
         return false;
     }

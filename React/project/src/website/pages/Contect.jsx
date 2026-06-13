@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import swal from 'sweetalert';
 
 function Contect() {
      const [formValue, setFormvalue] = useState({
@@ -17,7 +18,12 @@ function Contect() {
         e.preventDefault(); // prevent reload page due to form submit
         const res = await axios.post(`http://localhost:3000/contacts`, formValue);
         setFormvalue({ ...formValue, name: "", email: "", comment: ""});
-        alert('Inquiry Inserted Success');
+        swal({
+            title: "Success!",
+            text: "Inquiry Inserted Success!",
+            icon: "success",
+            button: "Aww yiss!",
+        });
         return false;
     }
     return (

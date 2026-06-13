@@ -1,7 +1,23 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import swal from 'sweetalert';
 
 function AHeader() {
+
+  const redirect = useNavigate();
+
+  const adminlogout = () => {
+    sessionStorage.removeItem('aid');
+    sessionStorage.removeItem('aname');
+    swal({
+      title: "Success!",
+      text: "Logout Successfull!",
+      icon: "success",
+      button: "Aww yiss!",
+    });
+    return redirect('/admin-login');
+
+  }
   return (
     <div>
       <div className="az-header">
@@ -26,7 +42,7 @@ function AHeader() {
                   <NavLink to="/manage_categories" className="nav-link">Manage Categories</NavLink>
                 </nav>
               </li>
-               <li className="nav-item">
+              <li className="nav-item">
                 <a href className="nav-link with-sub"><i className="typcn typcn-document" /> Product</a>
                 <nav className="az-menu-sub">
                   <NavLink to="/add_products" className="nav-link">Add Product</NavLink>
@@ -67,7 +83,7 @@ function AHeader() {
                 <a href className="dropdown-item"><i className="typcn typcn-edit" /> Edit Profile</a>
                 <a href className="dropdown-item"><i className="typcn typcn-time" /> Activity Logs</a>
                 <a href className="dropdown-item"><i className="typcn typcn-cog-outline" /> Account Settings</a>
-                <a href="page-signin.html" className="dropdown-item"><i className="typcn typcn-power-outline" /> Sign Out</a>
+                <a href="#" onClick={adminlogout} className="dropdown-item"><i className="typcn typcn-power-outline" /> Sign Out</a>
               </div>{/* dropdown-menu */}
             </div>
           </div>{/* az-header-right */}

@@ -1,7 +1,23 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import swal from 'sweetalert';
 
 function Header() {
+
+    const redirect = useNavigate();
+    const userlogout = () => {
+        sessionStorage.removeItem('uid');
+        sessionStorage.removeItem('uname');
+        swal({
+            title: "Success!",
+            text: "Logout Successfull!",
+            icon: "success",
+            button: "Aww yiss!",
+        });
+        return redirect('/');
+
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
@@ -11,7 +27,20 @@ function Header() {
                             <i className="fa fa-envelope mx-2" />
                             <a className="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
                             <i className="fa fa-phone mx-2" />
-                            <a className="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                            <a className="navbar-sm-brand text-light text-decoration-none me-5" href="tel:010-020-0340">010-020-0340</a>
+
+                            {(
+                                () => {
+                                    if (sessionStorage.getItem('uid')) {
+                                        return (
+                                            <>
+                                                <a className="navbar-sm-brand text-light text-decoration-none" href="#">Hi.. {sessionStorage.getItem('uname')}</a>
+                                            </>
+                                        )
+                                    }
+                                })()
+                            }
+
                         </div>
                         <div>
                             <a className="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i className="fab fa-facebook-f fa-sm fa-fw me-2" /></a>
@@ -50,25 +79,33 @@ function Header() {
                             </ul>
                         </div>
                         <div className="navbar align-self-center d-flex">
-                            <div className="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                                <div className="input-group">
-                                    <input type="text" className="form-control" id="inputMobileSearch" placeholder="Search ..." />
-                                    <div className="input-group-text">
-                                        <i className="fa fa-fw fa-search" />
-                                    </div>
-                                </div>
-                            </div>
-                            <a className="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                                <i className="fa fa-fw fa-search text-dark mr-2" />
-                            </a>
-                            <a className="nav-icon position-relative text-decoration-none" href="#">
-                                <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1" />
-                                <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-                            </a>
-                            <Link className="nav-icon position-relative text-decoration-none" to="/login">
-                                <i className="fa fa-fw fa-user text-dark mr-3" />
-                                Login
-                            </Link>
+
+                            {(
+                                () => {
+                                    if (sessionStorage.getItem('uid')) {
+                                        return (
+                                            <>
+                                                <Link className="nav-icon position-relative text-decoration-none" to="/profile">
+                                                    <i className="fa fa-fw fa-user text-dark mr-3" />
+                                                    MyAccount
+                                                </Link>
+                                                <a onClick={userlogout} className="nav-icon position-relative text-decoration-none" href="#">
+                                                    Logout
+                                                </a>
+                                            </>
+                                        )
+                                    }
+                                    else {
+                                        return (
+                                            <Link className="nav-icon position-relative text-decoration-none" to="/login">
+                                                <i className="fa fa-fw fa-user text-dark mr-3" />
+                                                Login
+                                            </Link>
+                                        )
+                                    }
+                                })()
+                            }
+
                         </div>
                     </div>
                 </div>
