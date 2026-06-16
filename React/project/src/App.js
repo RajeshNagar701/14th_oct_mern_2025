@@ -21,6 +21,10 @@ import Signup from "./website/pages/Signup";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from "./website/pages/Profile";
+import Admin_auth from "./admin/component/Admin_auth";
+import After_uauth from "./website/component/After_uauth";
+import Before_uauth from "./website/component/Before_uauth";
 
 
 function App() {
@@ -30,24 +34,36 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
-          <Route path="/about" element={<><Header /><About/><Footer /></>}></Route>
-          <Route path="/shop" element={<><Header /><Shop/><Footer /></>}></Route>
-          <Route path="/shop-single/:id" element={<><Header /><ShopSingle/><Footer /></>}></Route>
-          <Route path="/contact" element={<><Header /><Contect/><Footer /></>}></Route>
-          <Route path="/login" element={<><Header /><Login/><Footer /></>}></Route>
-          <Route path="/signup" element={<><Header /><Signup/><Footer /></>}></Route>
+          <Route path="/about" element={<><Header /><About /><Footer /></>}></Route>
+          <Route path="/shop" element={<><Header /><Shop /><Footer /></>}></Route>
+          <Route path="/shop-single/:id" element={<><Header /><ShopSingle /><Footer /></>}></Route>
+          <Route path="/contact" element={<><Header /><Contect /><Footer /></>}></Route>
 
-          <Route path="/dashboard" element={<><AHeader /><Dashboard/><AFooter /></>}></Route>
-          <Route path="/add_categories" element={<><AHeader /><Add_categories/><AFooter /></>}></Route>
-          <Route path="/manage_categories" element={<><AHeader /><Manage_categories/><AFooter /></>}></Route>
-           <Route path="/add_products" element={<><AHeader /><Add_products/><AFooter /></>}></Route>
-          <Route path="/manage_products" element={<><AHeader /><Manage_products/><AFooter /></>}></Route>
-          <Route path="/manage_customers" element={<><AHeader /><Manage_customers/><AFooter /></>}></Route>
-          <Route path="/manage_contacts" element={<><AHeader /><Manage_contacts/><AFooter /></>}></Route>
-          <Route path="/admin-login" element={<><Admin_login/></>}></Route>
-          
+          <Route element={<Before_uauth />}>
+            <Route path="/login" element={<><Header /><Login /><Footer /></>}></Route>
+            <Route path="/signup" element={<><Header /><Signup /><Footer /></>}></Route>
+          </Route>
+
+          <Route element={<After_uauth />}>
+            <Route path="/profile" element={<><Header /><Profile /><Footer /></>}></Route>
+          </Route>
+
+
+          <Route path="/admin-login" element={<><Admin_login /></>}></Route>
+          {/* Protected Routes Wrapper */}
+          <Route element={<Admin_auth />}>
+            <Route path="/dashboard" element={<><AHeader /><Dashboard /><AFooter /></>}></Route>
+            <Route path="/add_categories" element={<><AHeader /><Add_categories /><AFooter /></>}></Route>
+            <Route path="/manage_categories" element={<><AHeader /><Manage_categories /><AFooter /></>}></Route>
+            <Route path="/add_products" element={<><AHeader /><Add_products /><AFooter /></>}></Route>
+            <Route path="/manage_products" element={<><AHeader /><Manage_products /><AFooter /></>}></Route>
+            <Route path="/manage_customers" element={<><AHeader /><Manage_customers /><AFooter /></>}></Route>
+            <Route path="/manage_contacts" element={<><AHeader /><Manage_contacts /><AFooter /></>}></Route>
+          </Route>
         </Routes>
       </BrowserRouter>
+
+      
     </div>
   );
 }

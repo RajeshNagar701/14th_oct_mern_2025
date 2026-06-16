@@ -4,8 +4,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
 function Admin_login() {
-
+    
     const redirect = useNavigate();
+
+    useEffect(() => {
+        if (sessionStorage.getItem('aid')) {
+            redirect('/dashboard');
+        }
+    })
+
+
     const [formValue, setFormvalue] = useState({
         email: "",
         password: ""
@@ -66,7 +74,7 @@ function Admin_login() {
                             </div>{/* form-group */}
                             <div className="form-group">
                                 <label>Password</label>
-                                <input type="password"  name="password" onChange={changeHandel} className="form-control" placeholder="Enter your password"  />
+                                <input type="password" name="password" onChange={changeHandel} className="form-control" placeholder="Enter your password" />
                             </div>{/* form-group */}
                             <button type='submit' className="btn btn-az-primary btn-block">Sign In</button>
                         </form>
