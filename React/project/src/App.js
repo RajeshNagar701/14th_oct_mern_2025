@@ -25,6 +25,7 @@ import Profile from "./website/pages/Profile";
 import Admin_auth from "./admin/component/Admin_auth";
 import After_uauth from "./website/component/After_uauth";
 import Before_uauth from "./website/component/Before_uauth";
+import Edit_profile from "./website/pages/Edit_profile";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
 
           <Route element={<After_uauth />}>
             <Route path="/profile" element={<><Header /><Profile /><Footer /></>}></Route>
+            <Route path="/edit_profile/:id" element={<><Header /><Edit_profile /><Footer /></>}></Route>
           </Route>
 
 

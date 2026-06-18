@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function Profile() {
+
+    const redirect=useNavigate();
 
     const [data, setData] = useState({});
     // auto call when component load/birth
@@ -30,7 +33,7 @@ function Profile() {
                             <p>Id : {data.id}</p>
                             <p>Mobile : {data.mobile}</p>
                             <p>Email : {data.email}</p>
-                            <button className='btn btn-warning'>Edit</button>
+                            <button className='btn btn-warning' onClick={()=>redirect('/edit_profile/'+ data.id) }>Edit</button>
                         </div>
                         <div className="col-md-4">
                             <img src={data.image} alt="About Hero" width="100%"/>
