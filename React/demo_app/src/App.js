@@ -15,6 +15,10 @@ import Class_life from './Lifecycle/class/Class_life'
 import MUI from './MUI/MUI'
 import Basic_crud from './Basic_crud/Basic_crud'
 import Styled_component from './Styled_component/Styled_component'
+import Main_drilling from './Props_drilling/Main_drilling'
+import Use_context from './UseContext/Use_context'
+import Tailwind_instalation from './React_Tailwind/Tailwind_instalation'
+
 
 function App() {
   return (
@@ -39,10 +43,14 @@ function App() {
 			//<MUI/>
 
 			//<Basic_crud/>
-			<Styled_component/>
+			//<Styled_component/>
+
+			//<Main_drilling/>
+			//<Use_context/>
+			
+			<Tailwind_instalation/>
+			
 		}
-		
-		
 		
 	</div>
   )

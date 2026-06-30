@@ -1,13 +1,21 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import swal from 'sweetalert';
+
 
 function Shop() {
 
   const redirect = useNavigate(); // we can redirect any routes
-
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
+
+  const [formValue, setFormvalue] = useState({
+    id: "",
+    user_id:"",
+    product_id: "",
+    quantity: ""
+  });
   // auto call when component load/birth
   useEffect(() => {
     fetch_cate();
@@ -32,6 +40,23 @@ function Shop() {
     setData1(res.data);
   }
 
+  const changeHandel = (e) => {
+    setFormvalue({ ...formValue,id:new Date().getTime().toString(),[e.target.name]: e.target.value });
+    console.log(formValue);
+  }
+  const submitHandel = async (e) => {
+    e.preventDefault();
+    const res = await axios.post(`http://localhost:3000/cart`, formValue);
+    setFormvalue({ ...formValue, product_id: "", user_id: "", quantity: "" });
+    swal({
+      title: "Success!",
+      text: "Product added Success!",
+      icon: "success",
+      button: "Aww yiss!",
+    });
+    return false;
+  }
+
 
   return (
     <div>
@@ -48,7 +73,7 @@ function Shop() {
                   </a>
                   <ul className="collapse show list-unstyled pl-3">
                     <li><a className="text-decoration-none" href="#" onClick={() => fetch_product()}>All</a></li>
-                     
+
                     {
                       data.map((value) => {
                         return (
@@ -104,13 +129,20 @@ function Shop() {
                               <ul className="list-unstyled">
                                 <li><a className="btn btn-success text-white" href="#" onClick={() => redirect('/shop-single/' + value.id)}><i className="far fa-heart" /></a></li>
                                 <li><a className="btn btn-success text-white mt-2" href="#"><i className="far fa-eye" /></a></li>
-                                <li><a className="btn btn-success text-white mt-2" href="#"><i className="fas fa-cart-plus" /></a></li>
+
                               </ul>
                             </div>
                           </div>
                           <div className="card-body">
                             <Link to="/shop-single" className="h3 text-decoration-none">Oupidatat non</Link>
                             <p className="text-center mb-0">$250.00</p>
+                            <form action="" method='post' onSubmit={submitHandel}>
+                              <input type="text"   name="user_id" value={sessionStorage.getItem('uid')} />
+                              <input type="text"   name="product_id" value={value.id} />
+                              <input type="number" onChange={changeHandel} name="quantity" size="1" required/>
+
+                              <button type='submit' className="btn btn-success text-white float-end"><i className="fas fa-cart-plus" /></button>
+                            </form>
                           </div>
                         </div>
                       </div>

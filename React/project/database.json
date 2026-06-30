@@ -59,6 +59,22 @@
     }
   ],
   "contacts": [],
+  "cart": [
+    {
+      "id": 1,
+      "user_id": "cvgcNE9G0Hc",
+      "product_id": "HUenOWnqPow",
+      "quantity": "1",
+      "created_at": "Sat Jun 20 2026 09:25:47 GMT+0530 (India Standard Time)"
+    },
+    {
+      "id": 2,
+      "user_id": "cvgcNE9G0Hc",
+      "product_id": "APv-HKwYZUA",
+      "quantity": "1",
+      "created_at": "Sat Jun 20 2026 09:28:47 GMT+0530 (India Standard Time)"
+    }
+  ],
   "customers": [
     {
       "id": "cvgcNE9G0Hc",
