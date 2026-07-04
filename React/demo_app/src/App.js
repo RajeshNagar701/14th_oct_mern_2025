@@ -18,6 +18,9 @@ import Styled_component from './Styled_component/Styled_component'
 import Main_drilling from './Props_drilling/Main_drilling'
 import Use_context from './UseContext/Use_context'
 import Tailwind_instalation from './React_Tailwind/Tailwind_instalation'
+import UseRef from './useRef/UseRef'
+import UseRef1 from './useRef/UseRef1'
+import React_useCallback from './React_useCallback/React_useCallback'
 
 
 function App() {
@@ -48,8 +51,12 @@ function App() {
 			//<Main_drilling/>
 			//<Use_context/>
 			
-			<Tailwind_instalation/>
+			//<Tailwind_instalation/>
 			
+			//<UseRef/>
+			//<UseRef1/>
+
+			<React_useCallback/>
 		}
 		
 	</div>

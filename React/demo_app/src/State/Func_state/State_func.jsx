@@ -32,11 +32,15 @@ var [mydata,setMydata]=usestate({
 
 */
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Func_img from './Func_img';
 
 
 function State_func() {
+
+  useEffect(()=>{
+    alert('hello');
+  })
 
   const [day, setDay] = useState("Hi good Morning");
 
