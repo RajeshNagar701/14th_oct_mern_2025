@@ -1,10 +1,7 @@
 import React,{useEffect} from 'react'
 
 function Hello() {
-  
-  useEffect(()=>{
-   // alert('Import');
-  },[])
+
     
   return (
     <div>

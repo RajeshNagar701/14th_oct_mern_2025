@@ -21,6 +21,8 @@ import Tailwind_instalation from './React_Tailwind/Tailwind_instalation'
 import UseRef from './useRef/UseRef'
 import UseRef1 from './useRef/UseRef1'
 import React_useCallback from './React_useCallback/React_useCallback'
+import React_memo from './React_Memo/React_memo'
+import Main_lazy from './Lazy_suspense/Main_lazy'
 
 
 function App() {
@@ -56,7 +58,10 @@ function App() {
 			//<UseRef/>
 			//<UseRef1/>
 
-			<React_useCallback/>
+			//<React_useCallback/>
+			//<React_memo/>
+
+			<Main_lazy/>
 		}
 		
 	</div>
