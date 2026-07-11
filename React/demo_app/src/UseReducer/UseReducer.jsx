@@ -40,10 +40,10 @@ export const myaction = (state, action) => {
         return ({ ...state, isImage: !state.isImage });
     }
 }
+
 function UseReducer() {
 
     const [state, dispatch] = useReducer(myaction, mydata)
-
     return (
         <div className='container mt-5'>
             <button className=' btn btn-primary' onClick={()=>dispatch({type:"Change"})}>Change</button>

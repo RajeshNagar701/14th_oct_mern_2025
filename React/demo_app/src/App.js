@@ -23,6 +23,7 @@ import UseRef1 from './useRef/UseRef1'
 import React_useCallback from './React_useCallback/React_useCallback'
 import React_memo from './React_Memo/React_memo'
 import Main_lazy from './Lazy_suspense/Main_lazy'
+import UseReducer from './UseReducer/UseReducer'
 
 
 function App() {
@@ -61,7 +62,9 @@ function App() {
 			//<React_useCallback/>
 			//<React_memo/>
 
-			<Main_lazy/>
+			//<Main_lazy/>
+
+			<UseReducer/>
 		}
 		
 	</div>
