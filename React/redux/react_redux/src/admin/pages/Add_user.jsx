@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import Header from '../component/Header'
 import Footer from '../component/Footer'
 import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { insert_data } from '../../app/userSlice';
 
 
 function Add_user() {
 
-     const [data, setData] = useState({
+    const dispatch = useDispatch();
+
+    const [data, setData] = useState({
         name: "",
         email: "",
         password: "",
@@ -43,11 +47,13 @@ function Add_user() {
         return result;
     }
 
-    const submithandel=(e)=>{
+    const submithandel = (e) => {
         e.preventDefault();
-        if(validation())
-        {
-           
+        if (validation()) {
+            dispatch(insert_data(data));
+            setData({ ...data, name: "", email: "", password: "", mobile: "" });
+            toast.success('User Data Added Success');
+            return false;
         }
 
     }

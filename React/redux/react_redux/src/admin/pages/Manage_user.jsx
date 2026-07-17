@@ -3,16 +3,25 @@ import Header from '../component/Header'
 import Footer from '../component/Footer'
 import { toast } from 'react-toastify';
 import swal from 'sweetalert';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { delete_data } from '../../app/userSlice';
 
 function Manage_user() {
 
-
+    const dispatch = useDispatch();
     useEffect(() => {
-      
+
     });
 
     const deleteHandel = (id) => {
-       
+        dispatch(delete_data(id));
+        swal({
+            title: "Success",
+            text: "User Deleted Success!",
+            icon: "success",
+            button: "Done",
+        });
     }
 
     const [data, setData] = useState({
@@ -24,7 +33,7 @@ function Manage_user() {
     });
 
     const editHandel = (id) => {
-       
+
     }
 
     const changeHandel = (e) => {
@@ -59,11 +68,11 @@ function Manage_user() {
 
     const submithandel = (e) => {
         e.preventDefault();
-      
+
     }
 
     const statusHandel = (id) => {
-       
+
     }
 
 
@@ -86,7 +95,7 @@ function Manage_user() {
                             </thead>
                             <tbody>
                                 {
-                                  
+
                                 }
 
                                 <div className="modal" id="myModal">
