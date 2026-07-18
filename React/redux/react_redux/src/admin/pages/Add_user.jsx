@@ -3,7 +3,7 @@ import Header from '../component/Header'
 import Footer from '../component/Footer'
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { insert_data } from '../../app/userSlice';
+import { insert_user } from '../../app/userSlice';
 
 
 function Add_user() {
@@ -50,7 +50,7 @@ function Add_user() {
     const submithandel = (e) => {
         e.preventDefault();
         if (validation()) {
-            dispatch(insert_data(data));
+            dispatch(insert_user(data));
             setData({ ...data, name: "", email: "", password: "", mobile: "" });
             toast.success('User Data Added Success');
             return false;

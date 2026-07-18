@@ -3,33 +3,18 @@
     {
       "id": "1771752960104",
       "name": "Nirav nagar",
-      "email": "nirav@gmail.com",
-      "password": "1234",
+      "email": "niravpnagar@gmail.com",
+      "password": "12345",
       "mobile": "1234",
       "status": "Block"
     },
     {
-      "name": "akash",
+      "name": "akash patel",
       "email": "akash@gmail.com",
       "password": "1234",
       "mobile": "1234567891",
       "id": "YE34OaPk_Tc",
       "status": "Unblock"
-    },
-    {
-      "requestId": "dKj2cSUaXod2d0Q9E4zwM",
-      "signal": {},
-      "id": "vbwstOAlm1M"
-    },
-    {
-      "requestId": "fdYYhClM5U1L32lke2ape",
-      "signal": {},
-      "id": "8IfWH21bioE"
-    },
-    {
-      "requestId": "wzcOi6wsFBP6eYrzyn5Xf",
-      "signal": {},
-      "id": "Q_7POG57x_E"
     },
     {
       "name": "nayan",

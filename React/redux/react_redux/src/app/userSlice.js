@@ -6,16 +6,21 @@ export const insert_user = createAsyncThunk('insert_middleware', async (formvalu
   return res;
 });
 
-export const delete_user= createAsyncThunk('delete', async (id) => {
+export const delete_user = createAsyncThunk('delete', async (id) => {
   const res = await axios.delete(`http://localhost:3000/user/${id}`);
   return res;
 });
 
-export const update_user= createAsyncThunk('update', async (formvalue) => {
-  const res = await axios.put(`http://localhost:3000/user/${formvalue.id}`,formvalue);
+export const update_user = createAsyncThunk('update', async (formvalue) => {
+  const res = await axios.put(`http://localhost:3000/user/${formvalue.id}`, formvalue);
   return res;
 });
 
+
+export const fetch_user = createAsyncThunk('fetch_user', async () => {
+  const res = await axios.get(`http://localhost:3000/user`);
+  return res.data;
+});
 
 export const userSlice = createSlice({
   name: 'user',
@@ -24,8 +29,13 @@ export const userSlice = createSlice({
     name: "Rajesh Nagar"
   },
   reducers: {
-
   },
+  extraReducers:
+    (builder) => {
+      builder.addCase(fetch_user.fulfilled, (state, action) => {
+        state.users = action.payload;
+      })
+    }
 })
 
 

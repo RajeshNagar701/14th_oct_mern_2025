@@ -4,24 +4,27 @@ import Footer from '../component/Footer'
 import { toast } from 'react-toastify';
 import swal from 'sweetalert';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { delete_data } from '../../app/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { delete_user, fetch_user, update_user } from '../../app/userSlice';
 
 function Manage_user() {
 
+    const { users } = useSelector((state) => state.user);
     const dispatch = useDispatch();
-    useEffect(() => {
 
+    useEffect(() => {
+        dispatch(fetch_user());
     });
 
     const deleteHandel = (id) => {
-        dispatch(delete_data(id));
+        dispatch(delete_user(id));
         swal({
             title: "Success",
             text: "User Deleted Success!",
             icon: "success",
             button: "Done",
         });
+        dispatch(fetch_user());
     }
 
     const [data, setData] = useState({
@@ -33,7 +36,11 @@ function Manage_user() {
     });
 
     const editHandel = (id) => {
-
+        const filter_data = users.filter((value, index, arr) => {
+            return value.id == id
+        });
+        console.log(filter_data[0]);
+        setData(filter_data[0]);
     }
 
     const changeHandel = (e) => {
@@ -68,7 +75,14 @@ function Manage_user() {
 
     const submithandel = (e) => {
         e.preventDefault();
-
+        dispatch(update_user(data));
+        dispatch(fetch_user());
+        swal({
+            title: "Success",
+            text: "User Updated Success!",
+            icon: "success",
+            button: "Done",
+        });
     }
 
     const statusHandel = (id) => {
@@ -95,7 +109,20 @@ function Manage_user() {
                             </thead>
                             <tbody>
                                 {
-
+                                    users && users.map((value, index, arr) => {
+                                        return (
+                                            <tr>
+                                                <td>{value.id}</td>
+                                                <td>{value.name}</td>
+                                                <td>{value.email}</td>
+                                                <td>{value.mobile}</td>
+                                                <td>
+                                                    <button className='btn btn-danger m-2' onClick={() => deleteHandel(value.id)}>Delete</button>
+                                                    <button className='btn btn-primary m-2' data-bs-toggle="modal" data-bs-target="#myModal" onClick={() => editHandel(value.id)} >Edit</button>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
                                 }
 
                                 <div className="modal" id="myModal">
