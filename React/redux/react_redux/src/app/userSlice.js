@@ -36,9 +36,7 @@ export const userSlice = createSlice({
         state.users = action.payload;
       })
     }
-})
-
-
+});
 
 export const { } = userSlice.actions
 export default userSlice.reducer

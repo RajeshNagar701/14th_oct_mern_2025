@@ -2,26 +2,26 @@
   "user": [
     {
       "id": "1771752960104",
-      "name": "Nirav nagar",
-      "email": "niravpnagar@gmail.com",
-      "password": "12345",
-      "mobile": "1234",
-      "status": "Block"
-    },
-    {
-      "name": "akash patel",
-      "email": "akash@gmail.com",
+      "name": "nagar",
+      "email": "nagar@gmail.com",
       "password": "1234",
       "mobile": "1234567891",
-      "id": "YE34OaPk_Tc",
       "status": "Unblock"
     },
     {
-      "name": "nayan",
-      "email": "nayan@gmail.com",
-      "password": "1234",
-      "mobile": "1234567891",
+      "id": "YE34OaPk_Tc",
+      "name": "nirav",
+      "email": "nirav@gmail.com",
+      "password": "1234587",
+      "mobile": "12345",
+      "status": "Unblock"
+    },
+    {
       "id": "xuEDyftx8js",
+      "name": "patel",
+      "email": "patel@gmail.com",
+      "password": "2123",
+      "mobile": "1234567894",
       "status": "Unblock"
     }
   ],

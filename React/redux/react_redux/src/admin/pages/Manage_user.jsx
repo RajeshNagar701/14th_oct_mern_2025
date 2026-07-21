@@ -86,7 +86,47 @@ function Manage_user() {
     }
 
     const statusHandel = (id) => {
+        const filter_data = users.filter((value, index, arr) => {
+            return value.id == id
+        });
+        //console.log(filter_data[0].status);
+        if (filter_data[0].status == "Block") {
+            const statusdata={
+                    id:filter_data[0].id,
+                    name:filter_data[0].name,
+                    email:filter_data[0].email,
+                    password:filter_data[0].password,
+                    mobile:filter_data[0].mobile,
+                    status:"Unblock"
+                }
 
+            dispatch(update_user(statusdata));
+            dispatch(fetch_user());
+            swal({
+                title: "Success",
+                text: "User status Unblock Success!",
+                icon: "success",
+                button: "Done",
+            });
+        }
+        else {
+            const statusdata={
+                    id:filter_data[0].id,
+                    name:filter_data[0].name,
+                    email:filter_data[0].email,
+                    password:filter_data[0].password,
+                    mobile:filter_data[0].mobile,
+                    status:"Block"
+                }
+            dispatch(update_user(statusdata));
+            dispatch(fetch_user());
+            swal({
+                title: "Success",
+                text: "User status Blocked Success!",
+                icon: "success",
+                button: "Done",
+            });
+        }
     }
 
 
@@ -116,6 +156,7 @@ function Manage_user() {
                                                 <td>{value.name}</td>
                                                 <td>{value.email}</td>
                                                 <td>{value.mobile}</td>
+                                                <td><button className='btn btn-success m-2' onClick={() => statusHandel(value.id)}>{value.status}</button></td>
                                                 <td>
                                                     <button className='btn btn-danger m-2' onClick={() => deleteHandel(value.id)}>Delete</button>
                                                     <button className='btn btn-primary m-2' data-bs-toggle="modal" data-bs-target="#myModal" onClick={() => editHandel(value.id)} >Edit</button>
